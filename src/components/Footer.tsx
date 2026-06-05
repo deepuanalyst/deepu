@@ -27,7 +27,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
               style={logoStyle}
               id="footer-logo-btn"
             >
-              DataJourney
+              AnalystJourney
             </button>
             <p className="text-sm text-gray-400 font-sans max-w-xs">
               Turning Data into Actionable Business Insights. Practical Excel, SQL, Power BI, and Python reviews.
@@ -98,7 +98,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
         {/* Bottom copyright details */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 font-mono">
           <div>© 2026 Deepu | Data Analyst</div>
-          <div className="mt-2 sm:mt-0 italic">DataJourney.com</div>
+          <div className="mt-2 sm:mt-0 italic">AnalystJourney.com</div>
         </div>
       </div>
     </footer>

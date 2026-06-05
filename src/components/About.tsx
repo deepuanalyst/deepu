@@ -106,7 +106,7 @@ export default function About() {
                 Throughout my 9-year narrative in analytics, I have specialized in turning fragmented operational rows into robust corporate reports and visuals. Whether working alongside administrative teams at the <strong className="text-gray-900 dark:text-gray-100 font-semibold">Delhi Development Authority (DDA)</strong> auditing critical public records, or designing reporting dashboards at <strong className="text-gray-900 dark:text-gray-100 font-semibold">Intellipaat Software Solutions</strong>, I approach data with absolute diligence.
               </p>
               <p>
-                My analytical philosophy centers on simplicity. I believe that most data questions can be answered clearly when the data pipelines are structured cleanly and the visualizations prioritize business-relevant KPIs. Beyond work, I run <strong className="text-gray-900 dark:text-gray-100 font-semibold">DataJourney.com</strong> to demystify complex formulas and database queries for aspiring data students.
+                My analytical philosophy centers on simplicity. I believe that most data questions can be answered clearly when the data pipelines are structured cleanly and the visualizations prioritize business-relevant KPIs. Beyond work, I run <strong className="text-gray-900 dark:text-gray-100 font-semibold">AnalystJourney.com</strong> to demystify complex formulas and database queries for aspiring data students.
               </p>
             </div>
           </div>

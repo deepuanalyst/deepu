@@ -673,7 +673,7 @@ export default function Blog({ selectedPostId, setSelectedPostId }: BlogProps) {
                       </div>
                       <div>
                         <p className="font-bold text-gray-900 dark:text-gray-100">{activePost.author.name}</p>
-                        <p className="text-xs text-gray-500">Delhi, India | Creator of DataJourney.com</p>
+                        <p className="text-xs text-gray-500">Delhi, India | Creator of AnalystJourney.com</p>
                       </div>
                     </div>
                     
@@ -755,7 +755,7 @@ export default function Blog({ selectedPostId, setSelectedPostId }: BlogProps) {
                   <div className="flex gap-2">
                     <a
                       href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-                        `Check out this portfolio guide on DataJourney.com: "${activePost.title}"`
+                        `Check out this portfolio guide on AnalystJourney.com: "${activePost.title}"`
                       )}`}
                       target="_blank"
                       rel="noreferrer"

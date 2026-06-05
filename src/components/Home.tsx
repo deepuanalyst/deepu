@@ -115,7 +115,7 @@ export default function Home({
             >
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFA2B6]/20 dark:bg-[#FFA2B6]/10 text-[#D6536D]">
                 <span className="w-2 h-2 rounded-full cursor-pointer" style={{ backgroundColor: '#D6536D' }} />
-                <span className="text-xs font-sans font-semibold tracking-wide">DataJourney.com</span>
+                <span className="text-xs font-sans font-semibold tracking-wide">AnalystJourney.com</span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#1F2937] dark:text-[#F3F4F6] tracking-tight">

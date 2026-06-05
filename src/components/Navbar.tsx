@@ -47,7 +47,7 @@ export default function Navbar({
               style={logoStyle}
               id="nav-logo-btn"
             >
-              DataJourney
+              AnalystJourney
             </button>
           </div>
 
