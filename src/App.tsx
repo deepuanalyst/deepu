@@ -12,15 +12,24 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
   const [selectedPostId, setSelectedPostId] = useState<string | null>(null);
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      return savedTheme === 'dark';
+    }
+    // Fallback to system preference
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
 
-  // Synchronise dark mode state with document class list
+  // Synchronise dark mode state with document class list and localStorage
   useEffect(() => {
     const root = document.documentElement;
     if (isDarkMode) {
       root.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
     } else {
       root.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
     }
   }, [isDarkMode]);
 
