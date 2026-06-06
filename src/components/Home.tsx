@@ -74,9 +74,9 @@ export default function Home({
                 }}
                 className="relative"
               >
-                 {/* Premium modern professional portrait card - dynamically animated with spring hover scale and lift */}
+                  {/* Premium modern professional portrait card - dynamically animated with spring hover scale and lift */}
                 <motion.div 
-                  className="relative w-80 h-80 sm:w-[380px] sm:h-[380px] md:w-[420px] md:h-[420px] lg:w-[440px] lg:h-[440px] rounded-[32px] overflow-hidden bg-white/40 dark:bg-black/10 backdrop-blur-sm p-1.5 border border-gray-150/50 dark:border-zinc-800/30 shadow-[0_20px_50px_rgba(0,0,0,0.06)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.25)]"
+                  className="relative w-full max-w-[440px] h-[400px] max-h-[400px] rounded-[32px] overflow-hidden bg-white/40 dark:bg-black/10 backdrop-blur-sm p-1.5 border border-gray-150/50 dark:border-zinc-800/30 shadow-[0_20px_50px_rgba(0,0,0,0.06)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.25)]"
                   id="hero-portrait-card"
                 >
                   {/* Rotating Gradient Border (Appears & fades out on hover) */}
@@ -96,49 +96,49 @@ export default function Home({
                     <img 
                       src={profileImg} 
                       alt="Deepu Sharma" 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover max-h-[400px]"
                       referrerPolicy="no-referrer"
                     />
                     
                     {/* Corner Spark Containers (Periodic 3s fireworks) */}
                     {/* Top-Left Corner Sparks */}
                     <div className="absolute top-0 left-0 spark-parent-container" style={{ animationDelay: '0s' }}>
-                      <div className="firework-spark" style={{ '--tx': '25px', '--ty': '5px', animationDelay: '0s', backgroundColor: '#FFA2B6', color: '#FFA2B6' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '12px', '--ty': '22px', animationDelay: '0.1s', backgroundColor: '#EFB11D', color: '#EFB11D' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '30px', '--ty': '15px', animationDelay: '0.15s', backgroundColor: '#7B2FF7', color: '#7B2FF7' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '5px', '--ty': '28px', animationDelay: '0.25s', backgroundColor: '#F107A3', color: '#F107A3' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '20px', '--ty': '20px', animationDelay: '0.3s', backgroundColor: '#ffffff', color: '#ffffff' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '-3px', '--ty': '15px', animationDelay: '0.4s', backgroundColor: '#D6536D', color: '#D6536D' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '50px', '--ty': '10px', animationDelay: '0s', backgroundColor: '#FFA2B6', color: '#FFA2B6' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '24px', '--ty': '44px', animationDelay: '0.1s', backgroundColor: '#EFB11D', color: '#EFB11D' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '60px', '--ty': '30px', animationDelay: '0.15s', backgroundColor: '#7B2FF7', color: '#7B2FF7' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '10px', '--ty': '56px', animationDelay: '0.25s', backgroundColor: '#F107A3', color: '#F107A3' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '40px', '--ty': '40px', animationDelay: '0.3s', backgroundColor: '#ffffff', color: '#ffffff' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-6px', '--ty': '30px', animationDelay: '0.4s', backgroundColor: '#D6536D', color: '#D6536D' } as React.CSSProperties} />
                     </div>
 
                     {/* Top-Right Corner Sparks */}
                     <div className="absolute top-0 right-0 spark-parent-container" style={{ animationDelay: '0.15s' }}>
-                      <div className="firework-spark" style={{ '--tx': '-25px', '--ty': '5px', animationDelay: '0s', backgroundColor: '#EFB11D', color: '#EFB11D' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '-12px', '--ty': '22px', animationDelay: '0.08s', backgroundColor: '#7B2FF7', color: '#7B2FF7' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '-30px', '--ty': '15px', animationDelay: '0.18s', backgroundColor: '#F107A3', color: '#F107A3' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '-5px', '--ty': '28px', animationDelay: '0.22s', backgroundColor: '#ffffff', color: '#ffffff' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '-20px', '--ty': '20px', animationDelay: '0.31s', backgroundColor: '#D6536D', color: '#D6536D' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '3px', '--ty': '15px', animationDelay: '0.38s', backgroundColor: '#FFA2B6', color: '#FFA2B6' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-50px', '--ty': '10px', animationDelay: '0s', backgroundColor: '#EFB11D', color: '#EFB11D' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-24px', '--ty': '44px', animationDelay: '0.08s', backgroundColor: '#7B2FF7', color: '#7B2FF7' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-60px', '--ty': '30px', animationDelay: '0.18s', backgroundColor: '#F107A3', color: '#F107A3' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-10px', '--ty': '56px', animationDelay: '0.22s', backgroundColor: '#ffffff', color: '#ffffff' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-40px', '--ty': '40px', animationDelay: '0.31s', backgroundColor: '#D6536D', color: '#D6536D' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '6px', '--ty': '30px', animationDelay: '0.38s', backgroundColor: '#FFA2B6', color: '#FFA2B6' } as React.CSSProperties} />
                     </div>
 
                     {/* Bottom-Left Corner Sparks */}
                     <div className="absolute bottom-0 left-0 spark-parent-container" style={{ animationDelay: '0.3s' }}>
-                      <div className="firework-spark" style={{ '--tx': '25px', '--ty': '-5px', animationDelay: '0s', backgroundColor: '#7B2FF7', color: '#7B2FF7' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '12px', '--ty': '-22px', animationDelay: '0.07s', backgroundColor: '#F107A3', color: '#F107A3' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '30px', '--ty': '-15px', animationDelay: '0.14s', backgroundColor: '#ffffff', color: '#ffffff' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '5px', '--ty': '-28px', animationDelay: '0.24s', backgroundColor: '#D6536D', color: '#D6536D' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '20px', '--ty': '-20px', animationDelay: '0.29s', backgroundColor: '#FFA2B6', color: '#FFA2B6' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '-3px', '--ty': '-15px', animationDelay: '0.39s', backgroundColor: '#EFB11D', color: '#EFB11D' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '50px', '--ty': '-10px', animationDelay: '0s', backgroundColor: '#7B2FF7', color: '#7B2FF7' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '24px', '--ty': '-44px', animationDelay: '0.07s', backgroundColor: '#F107A3', color: '#F107A3' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '60px', '--ty': '-30px', animationDelay: '0.14s', backgroundColor: '#ffffff', color: '#ffffff' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '10px', '--ty': '-56px', animationDelay: '0.24s', backgroundColor: '#D6536D', color: '#D6536D' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '40px', '--ty': '-40px', animationDelay: '0.29s', backgroundColor: '#FFA2B6', color: '#FFA2B6' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-6px', '--ty': '-30px', animationDelay: '0.39s', backgroundColor: '#EFB11D', color: '#EFB11D' } as React.CSSProperties} />
                     </div>
 
                     {/* Bottom-Right Corner Sparks */}
                     <div className="absolute bottom-0 right-0 spark-parent-container" style={{ animationDelay: '0.45s' }}>
-                      <div className="firework-spark" style={{ '--tx': '-25px', '--ty': '-5px', animationDelay: '0s', backgroundColor: '#F107A3', color: '#F107A3' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '-12px', '--ty': '-22px', animationDelay: '0.09s', backgroundColor: '#ffffff', color: '#ffffff' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '-30px', '--ty': '-15px', animationDelay: '0.16s', backgroundColor: '#D6536D', color: '#D6536D' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '-5px', '--ty': '-28px', animationDelay: '0.23s', backgroundColor: '#FFA2B6', color: '#FFA2B6' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '-20px', '--ty': '-20px', animationDelay: '0.32s', backgroundColor: '#EFB11D', color: '#EFB11D' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '3px', '--ty': '-15px', animationDelay: '0.4s', backgroundColor: '#7B2FF7', color: '#7B2FF7' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-50px', '--ty': '-10px', animationDelay: '0s', backgroundColor: '#F107A3', color: '#F107A3' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-24px', '--ty': '-44px', animationDelay: '0.09s', backgroundColor: '#ffffff', color: '#ffffff' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-60px', '--ty': '-30px', animationDelay: '0.16s', backgroundColor: '#D6536D', color: '#D6536D' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-10px', '--ty': '-56px', animationDelay: '0.23s', backgroundColor: '#FFA2B6', color: '#FFA2B6' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-40px', '--ty': '-40px', animationDelay: '0.32s', backgroundColor: '#EFB11D', color: '#EFB11D' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '6px', '--ty': '-30px', animationDelay: '0.4s', backgroundColor: '#7B2FF7', color: '#7B2FF7' } as React.CSSProperties} />
                     </div>
                     
                     {/* Subtle vignette layer only at bottom right to ground the tag, keeping the rest of the yellow/white design bright and unaltered */}
