@@ -29,3 +29,120 @@ html {
   margin-bottom: 1.5rem;
   line-height: 1.75;
 }
+
+/* ==========================================
+   PRIME PREMIUM HOVER TRANSFORMS & SHADOWS
+   ========================================== */
+#hero-portrait-card {
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+              box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
+}
+
+#hero-portrait-card:hover {
+  transform: translateY(-8px) scale(1.03);
+}
+
+/* ==========================================
+   ROTATING GRADIENT BORDER SYSTEM
+   ========================================== */
+.premium-border-container {
+  position: absolute;
+  inset: 6px; /* overlapping the inner padding p-1.5 = 6px */
+  border-radius: 24px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 30;
+  opacity: 0;
+  pointer-events: none;
+  
+  /* Mask subtraction so that only the outer 3px stroke is visible */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask: linear-gradient(#fff 0 0) content-box exclude, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  padding: 3px; 
+}
+
+#hero-portrait-card:hover .premium-border-container {
+  animation: border-fade-out-2s 2s cubic-bezier(0.25, 1, 0.5, 1) forwards,
+             border-fade-in-pulse 0.2s ease-out forwards;
+}
+
+.premium-border-inner-conic {
+  position: absolute;
+  width: 250%;
+  height: 250%;
+  top: -75%;
+  left: -75%;
+  background: conic-gradient(from 0deg, #7B2FF7, #F107A3 45%, #7B2FF7 90%, #7B2FF7 100%);
+  border-radius: 50%;
+  transform-origin: center;
+}
+
+#hero-portrait-card:hover .premium-border-inner-conic {
+  animation: border-rotate-360 2s linear infinite;
+}
+
+/* Keyframes for border rotating */
+@keyframes border-rotate-360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Border visibility animations */
+@keyframes border-fade-in-pulse {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes border-fade-out-2s {
+  0% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ==========================================
+   FIREWORKS / SPARK ANIMATION SYSTEM
+   ========================================== */
+.spark-parent-container {
+  position: absolute;
+  pointer-events: none;
+  z-index: 50;
+  width: 0;
+  height: 0;
+  animation: spark-parent-cycle 3s infinite;
+}
+
+@keyframes spark-parent-cycle {
+  0%, 50% {
+    opacity: 1;
+    visibility: visible;
+  }
+  50.01%, 100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.firework-spark {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: spark 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards infinite;
+  box-shadow: 0 0 6px currentColor, 0 0 12px currentColor;
+}
+
+@keyframes spark {
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+}
+

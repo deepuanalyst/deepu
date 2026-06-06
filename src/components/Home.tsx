@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Github, Linkedin, ArrowRight, Mail, BookOpen, Clock, Heart, Award, ArrowDownToLine, BarChart2 } from 'lucide-react';
+import { Github, Linkedin, ArrowRight, Mail, BookOpen, Clock, Heart, Award, ArrowDownToLine } from 'lucide-react';
 import { BlogPost, Project, PageId } from '../types';
 import { BLOGS, PROJECTS } from '../data';
-// @ts-ignore
-import profileImg from '../../1779277885296.jpg';
+const profileImg = "https://media.licdn.com/dms/image/v2/D5603AQHwWY7Ka9OagA/profile-displayphoto-crop_800_800/B56Z6bNR0nGsAI-/0/1780720413509?e=1782345600&v=beta&t=8irbILSz94k5O9HrZHt5yrrashMbr2AwtqHzkexfd2Y";
 
 interface HomeProps {
   setCurrentPage: (page: PageId) => void;
@@ -20,7 +19,6 @@ export default function Home({
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
-
   const featuredBlogs = BLOGS.filter((b) => b.isFeatured !== false).slice(0, 5);
   const featuredProjects = PROJECTS.filter((p) => p.isFeatured !== false).slice(0, 3);
 
@@ -55,53 +53,107 @@ export default function Home({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4" id="hero-section">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Avatar Grid */}
-          <div className="lg:col-span-5 flex justify-center order-2 lg:order-1 relative">
+          <div className="lg:col-span-12 xl:col-span-5 flex justify-center order-2 lg:order-1 relative">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="relative animate-fade-in"
+              initial={{ opacity: 0, x: 80 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
+              className="relative group w-full flex justify-center"
             >
-              <div className="absolute inset-0 rounded-full blur-3xl opacity-25 dark:opacity-35 translate-x-1 translate-y-2 w-72 h-72 sm:w-80 sm:h-80" style={gradientStyle} />
+              <div className="absolute inset-0 rounded-3xl blur-3xl opacity-20 dark:opacity-30 translate-x-1 translate-y-2 w-full h-full max-w-[440px]" style={gradientStyle} />
               
-              {/* Circular avatar with high quality design and thin light borders */}
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full border-4 border-[#FFA2B6]/40 dark:border-[#2D2D2D] bg-white dark:bg-[#1A1A1A] overflow-hidden flex flex-col items-center justify-center shadow-2xl p-1.5 ring-4 ring-[#F107A3]/10">
-                <div className="w-full h-full rounded-full bg-white dark:bg-[#111111] flex flex-col items-center justify-center relative overflow-hidden">
-                  {/* Visual design inside avatar */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div 
-                      className="w-full h-full overflow-hidden" 
-                      style={{ borderRadius: '50%' }}
-                    >
-                      <img 
-                        src={profileImg} 
-                        alt="Deepu Sharma" 
-                        style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-                        referrerPolicy="no-referrer"
-                      />
+              {/* Continuous subtle floating animation wrapper */}
+              <motion.div
+                animate={{
+                  y: [0, -8, 0],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="relative"
+              >
+                 {/* Premium modern professional portrait card - dynamically animated with spring hover scale and lift */}
+                <motion.div 
+                  className="relative w-80 h-80 sm:w-[380px] sm:h-[380px] md:w-[420px] md:h-[420px] lg:w-[440px] lg:h-[440px] rounded-[32px] overflow-hidden bg-white/40 dark:bg-black/10 backdrop-blur-sm p-1.5 border border-gray-150/50 dark:border-zinc-800/30 shadow-[0_20px_50px_rgba(0,0,0,0.06)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.25)]"
+                  id="hero-portrait-card"
+                >
+                  {/* Rotating Gradient Border (Appears & fades out on hover) */}
+                  <div className="premium-border-container shadow-inner">
+                    <div className="premium-border-inner-conic" />
+                  </div>
+
+                  {/* Corner Spark Particles (Fireworks explode outward and fade out on hover) */}
+                  <div className="hero-spark spark-tl" style={{ color: '#FFA2B6', top: '16px', left: '16px' }} />
+                  <div className="hero-spark spark-tr" style={{ color: '#EFB11D', top: '16px', right: '16px' }} />
+                  <div className="hero-spark spark-bl" style={{ color: '#7B2FF7', bottom: '16px', left: '16px' }} />
+                  <div className="hero-spark spark-br" style={{ color: '#F107A3', bottom: '16px', right: '16px' }} />
+
+                  <div className="relative w-full h-full rounded-[24px] overflow-hidden bg-transparent flex items-center justify-center">
+                    
+                   {/* Sharp high-quality portrait image rendering full head, shoulders, and background design without cut off */}
+                    <img 
+                      src={profileImg} 
+                      alt="Deepu Sharma" 
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                    />
+                    
+                    {/* Corner Spark Containers (Periodic 3s fireworks) */}
+                    {/* Top-Left Corner Sparks */}
+                    <div className="absolute top-0 left-0 spark-parent-container" style={{ animationDelay: '0s' }}>
+                      <div className="firework-spark" style={{ '--tx': '25px', '--ty': '5px', animationDelay: '0s', backgroundColor: '#FFA2B6', color: '#FFA2B6' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '12px', '--ty': '22px', animationDelay: '0.1s', backgroundColor: '#EFB11D', color: '#EFB11D' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '30px', '--ty': '15px', animationDelay: '0.15s', backgroundColor: '#7B2FF7', color: '#7B2FF7' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '5px', '--ty': '28px', animationDelay: '0.25s', backgroundColor: '#F107A3', color: '#F107A3' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '20px', '--ty': '20px', animationDelay: '0.3s', backgroundColor: '#ffffff', color: '#ffffff' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-3px', '--ty': '15px', animationDelay: '0.4s', backgroundColor: '#D6536D', color: '#D6536D' } as React.CSSProperties} />
+                    </div>
+
+                    {/* Top-Right Corner Sparks */}
+                    <div className="absolute top-0 right-0 spark-parent-container" style={{ animationDelay: '0.15s' }}>
+                      <div className="firework-spark" style={{ '--tx': '-25px', '--ty': '5px', animationDelay: '0s', backgroundColor: '#EFB11D', color: '#EFB11D' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-12px', '--ty': '22px', animationDelay: '0.08s', backgroundColor: '#7B2FF7', color: '#7B2FF7' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-30px', '--ty': '15px', animationDelay: '0.18s', backgroundColor: '#F107A3', color: '#F107A3' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-5px', '--ty': '28px', animationDelay: '0.22s', backgroundColor: '#ffffff', color: '#ffffff' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-20px', '--ty': '20px', animationDelay: '0.31s', backgroundColor: '#D6536D', color: '#D6536D' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '3px', '--ty': '15px', animationDelay: '0.38s', backgroundColor: '#FFA2B6', color: '#FFA2B6' } as React.CSSProperties} />
+                    </div>
+
+                    {/* Bottom-Left Corner Sparks */}
+                    <div className="absolute bottom-0 left-0 spark-parent-container" style={{ animationDelay: '0.3s' }}>
+                      <div className="firework-spark" style={{ '--tx': '25px', '--ty': '-5px', animationDelay: '0s', backgroundColor: '#7B2FF7', color: '#7B2FF7' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '12px', '--ty': '-22px', animationDelay: '0.07s', backgroundColor: '#F107A3', color: '#F107A3' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '30px', '--ty': '-15px', animationDelay: '0.14s', backgroundColor: '#ffffff', color: '#ffffff' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '5px', '--ty': '-28px', animationDelay: '0.24s', backgroundColor: '#D6536D', color: '#D6536D' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '20px', '--ty': '-20px', animationDelay: '0.29s', backgroundColor: '#FFA2B6', color: '#FFA2B6' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-3px', '--ty': '-15px', animationDelay: '0.39s', backgroundColor: '#EFB11D', color: '#EFB11D' } as React.CSSProperties} />
+                    </div>
+
+                    {/* Bottom-Right Corner Sparks */}
+                    <div className="absolute bottom-0 right-0 spark-parent-container" style={{ animationDelay: '0.45s' }}>
+                      <div className="firework-spark" style={{ '--tx': '-25px', '--ty': '-5px', animationDelay: '0s', backgroundColor: '#F107A3', color: '#F107A3' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-12px', '--ty': '-22px', animationDelay: '0.09s', backgroundColor: '#ffffff', color: '#ffffff' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-30px', '--ty': '-15px', animationDelay: '0.16s', backgroundColor: '#D6536D', color: '#D6536D' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-5px', '--ty': '-28px', animationDelay: '0.23s', backgroundColor: '#FFA2B6', color: '#FFA2B6' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '-20px', '--ty': '-20px', animationDelay: '0.32s', backgroundColor: '#EFB11D', color: '#EFB11D' } as React.CSSProperties} />
+                      <div className="firework-spark" style={{ '--tx': '3px', '--ty': '-15px', animationDelay: '0.4s', backgroundColor: '#7B2FF7', color: '#7B2FF7' } as React.CSSProperties} />
+                    </div>
+                    
+                    {/* Subtle vignette layer only at bottom right to ground the tag, keeping the rest of the yellow/white design bright and unaltered */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-black/25 via-transparent to-transparent opacity-40 pointer-events-none" />
+                    
+                    {/* Elegant floating location tag */}
+                    <div className="absolute bottom-4 right-4 bg-white/90 dark:bg-[#0F0F0F]/90 backdrop-blur-md px-3 py-1 rounded-full border border-gray-200/80 dark:border-zinc-800/85 shadow-sm">
+                      <span className="text-[#D6536D] text-[10px] font-mono font-bold uppercase tracking-wider flex items-center gap-1.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                        New Delhi, IN
+                      </span>
                     </div>
                   </div>
-                  {/* Overlay patterns to look modern */}
-                  <div className="absolute inset-0 bg-black/10 mix-blend-overlay" />
-                  <div className="absolute bottom-6 bg-white/95 dark:bg-[#0F0F0F]/95 backdrop-blur-md px-4 py-1.5 rounded-full border border-gray-200 dark:border-gray-800 shadow-md">
-                    <span className="text-[#D6536D] text-xs font-mono font-medium uppercase tracking-widest flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                      New Delhi, IN
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* FLOATING BENTO ACCURACY RATE CARD */}
-              <div className="absolute top-1/4 -right-1 sm:-right-6 bg-white dark:bg-[#1A1A1A] p-3 rounded-2xl shadow-xl border border-gray-150 dark:border-[#2D2D2D] flex items-center space-x-3 transition-transform hover:scale-105 z-10" id="floating-accuracy-widget">
-                <div className="w-9 h-9 rounded-xl bg-[#FFA2B6]/20 flex items-center justify-center text-[#D6536D] shrink-0">
-                  <BarChart2 className="w-4 h-4" />
-                </div>
-                <div className="text-left">
-                  <p className="text-[9px] text-gray-400 dark:text-gray-500 font-bold uppercase tracking-wider leading-none mb-1">Accuracy Rate</p>
-                  <p className="text-base font-extrabold text-gray-900 dark:text-white leading-none font-mono">99.2%</p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </motion.div>
           </div>
 
