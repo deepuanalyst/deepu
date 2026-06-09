@@ -183,7 +183,7 @@ export default function Home({
               </h2>
               
               <p className="text-[#6B7280] dark:text-[#9CA3AF] text-base leading-relaxed max-w-2xl font-sans">
-                Data Analyst with 9+ years of experience in reporting, business analytics, dashboard development, SQL, Power BI, Python, and Advanced Excel. Sharing practical tutorials, real-world projects, and analytics insights.
+                Results-driven Data Analyst with 1 year of hands-on experience and 8+ years in reporting, data management, business analytics, and operational support across govt. and pvt. sectors. Proficient in Advanced Excel, SQL, Power BI, and Python for dashboard development, automation, and data analysis. Skilled at transforming raw data into actionable insights to support data-driven business decisions.
               </p>
             </motion.div>
 
