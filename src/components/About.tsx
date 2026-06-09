@@ -100,7 +100,7 @@ export default function About() {
 
             <div className="prose prose-gray dark:prose-invert max-w-none space-y-6 text-[#6B7280] dark:text-[#9CA3AF] text-base leading-relaxed font-sans">
               <p className="text-lg font-medium text-[#1F2937] dark:text-[#F3F4F6]">
-                Results-driven Data Analyst with 9+ years of experience in reporting, data management, business analytics, MIS reporting, SQL, Python, Power BI, and Advanced Excel.
+                Results-driven Data Analyst with <span style={{ color: '#D6536D', fontWeight: 500 }}>1 year</span> of hands-on experience and <span style={{ color: '#D6536D', fontWeight: 500 }}>8+ years</span> in reporting, data management, business analytics, and operational support across govt. and pvt. sectors. Proficient in Advanced Excel, SQL, Power BI, and Python for dashboard development, automation, and data analysis. Skilled at transforming raw data into actionable insights to support data-driven business decisions.
               </p>
               <p>
                 Throughout my 9-year narrative in analytics, I have specialized in turning fragmented operational rows into robust corporate reports and visuals. Whether working alongside administrative teams at the <strong className="text-gray-900 dark:text-gray-100 font-semibold">Delhi Development Authority (DDA)</strong> auditing critical public records, or designing reporting dashboards at <strong className="text-gray-900 dark:text-gray-100 font-semibold">Intellipaat Software Solutions</strong>, I approach data with absolute diligence.

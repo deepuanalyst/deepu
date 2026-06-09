@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Github, Linkedin, ArrowRight, Mail, BookOpen, Clock, Heart, Award, ArrowDownToLine } from 'lucide-react';
 import { BlogPost, Project, PageId } from '../types';
 import { BLOGS, PROJECTS } from '../data';
+import { SubtleParticlesCanvas } from './SubtleParticlesCanvas';
 const profileImg = "https://media.licdn.com/dms/image/v2/D5603AQHwWY7Ka9OagA/profile-displayphoto-crop_800_800/B56Z6bNR0nGsAI-/0/1780720413509?e=1782345600&v=beta&t=8irbILSz94k5O9HrZHt5yrrashMbr2AwtqHzkexfd2Y";
 
 interface HomeProps {
@@ -50,7 +51,10 @@ export default function Home({
   return (
     <div className="space-y-20 py-8" id="home-page-container">
       {/* 1. Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4" id="hero-section">
+      <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 overflow-hidden" id="hero-section">
+        {/* Subtle Background Particles */}
+        <SubtleParticlesCanvas />
+        
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Avatar Grid */}
           <div className="lg:col-span-12 xl:col-span-5 flex justify-center order-2 lg:order-1 relative">
@@ -84,13 +88,7 @@ export default function Home({
                     <div className="premium-border-inner-conic" />
                   </div>
 
-                  {/* Corner Spark Particles (Fireworks explode outward and fade out on hover) */}
-                  <div className="hero-spark spark-tl" style={{ color: '#FFA2B6', top: '16px', left: '16px' }} />
-                  <div className="hero-spark spark-tr" style={{ color: '#EFB11D', top: '16px', right: '16px' }} />
-                  <div className="hero-spark spark-bl" style={{ color: '#7B2FF7', bottom: '16px', left: '16px' }} />
-                  <div className="hero-spark spark-br" style={{ color: '#F107A3', bottom: '16px', right: '16px' }} />
-
-                  <div className="relative w-full h-full rounded-[24px] overflow-hidden bg-transparent flex items-center justify-center">
+                  <div className="relative w-full h-[400px] max-h-[400px] rounded-[24px] overflow-hidden bg-transparent flex items-center justify-center">
                     
                    {/* Sharp high-quality portrait image rendering full head, shoulders, and background design without cut off */}
                     <img 
@@ -99,47 +97,6 @@ export default function Home({
                       className="w-full h-full object-cover max-h-[400px]"
                       referrerPolicy="no-referrer"
                     />
-                    
-                    {/* Corner Spark Containers (Periodic 3s fireworks) */}
-                    {/* Top-Left Corner Sparks */}
-                    <div className="absolute top-0 left-0 spark-parent-container" style={{ animationDelay: '0s' }}>
-                      <div className="firework-spark" style={{ '--tx': '50px', '--ty': '10px', animationDelay: '0s', backgroundColor: '#FFA2B6', color: '#FFA2B6' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '24px', '--ty': '44px', animationDelay: '0.1s', backgroundColor: '#EFB11D', color: '#EFB11D' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '60px', '--ty': '30px', animationDelay: '0.15s', backgroundColor: '#7B2FF7', color: '#7B2FF7' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '10px', '--ty': '56px', animationDelay: '0.25s', backgroundColor: '#F107A3', color: '#F107A3' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '40px', '--ty': '40px', animationDelay: '0.3s', backgroundColor: '#ffffff', color: '#ffffff' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '-6px', '--ty': '30px', animationDelay: '0.4s', backgroundColor: '#D6536D', color: '#D6536D' } as React.CSSProperties} />
-                    </div>
-
-                    {/* Top-Right Corner Sparks */}
-                    <div className="absolute top-0 right-0 spark-parent-container" style={{ animationDelay: '0.15s' }}>
-                      <div className="firework-spark" style={{ '--tx': '-50px', '--ty': '10px', animationDelay: '0s', backgroundColor: '#EFB11D', color: '#EFB11D' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '-24px', '--ty': '44px', animationDelay: '0.08s', backgroundColor: '#7B2FF7', color: '#7B2FF7' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '-60px', '--ty': '30px', animationDelay: '0.18s', backgroundColor: '#F107A3', color: '#F107A3' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '-10px', '--ty': '56px', animationDelay: '0.22s', backgroundColor: '#ffffff', color: '#ffffff' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '-40px', '--ty': '40px', animationDelay: '0.31s', backgroundColor: '#D6536D', color: '#D6536D' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '6px', '--ty': '30px', animationDelay: '0.38s', backgroundColor: '#FFA2B6', color: '#FFA2B6' } as React.CSSProperties} />
-                    </div>
-
-                    {/* Bottom-Left Corner Sparks */}
-                    <div className="absolute bottom-0 left-0 spark-parent-container" style={{ animationDelay: '0.3s' }}>
-                      <div className="firework-spark" style={{ '--tx': '50px', '--ty': '-10px', animationDelay: '0s', backgroundColor: '#7B2FF7', color: '#7B2FF7' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '24px', '--ty': '-44px', animationDelay: '0.07s', backgroundColor: '#F107A3', color: '#F107A3' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '60px', '--ty': '-30px', animationDelay: '0.14s', backgroundColor: '#ffffff', color: '#ffffff' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '10px', '--ty': '-56px', animationDelay: '0.24s', backgroundColor: '#D6536D', color: '#D6536D' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '40px', '--ty': '-40px', animationDelay: '0.29s', backgroundColor: '#FFA2B6', color: '#FFA2B6' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '-6px', '--ty': '-30px', animationDelay: '0.39s', backgroundColor: '#EFB11D', color: '#EFB11D' } as React.CSSProperties} />
-                    </div>
-
-                    {/* Bottom-Right Corner Sparks */}
-                    <div className="absolute bottom-0 right-0 spark-parent-container" style={{ animationDelay: '0.45s' }}>
-                      <div className="firework-spark" style={{ '--tx': '-50px', '--ty': '-10px', animationDelay: '0s', backgroundColor: '#F107A3', color: '#F107A3' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '-24px', '--ty': '-44px', animationDelay: '0.09s', backgroundColor: '#ffffff', color: '#ffffff' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '-60px', '--ty': '-30px', animationDelay: '0.16s', backgroundColor: '#D6536D', color: '#D6536D' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '-10px', '--ty': '-56px', animationDelay: '0.23s', backgroundColor: '#FFA2B6', color: '#FFA2B6' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '-40px', '--ty': '-40px', animationDelay: '0.32s', backgroundColor: '#EFB11D', color: '#EFB11D' } as React.CSSProperties} />
-                      <div className="firework-spark" style={{ '--tx': '6px', '--ty': '-30px', animationDelay: '0.4s', backgroundColor: '#7B2FF7', color: '#7B2FF7' } as React.CSSProperties} />
-                    </div>
                     
                     {/* Subtle vignette layer only at bottom right to ground the tag, keeping the rest of the yellow/white design bright and unaltered */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-black/25 via-transparent to-transparent opacity-40 pointer-events-none" />
@@ -183,7 +140,7 @@ export default function Home({
               </h2>
               
               <p className="text-[#6B7280] dark:text-[#9CA3AF] text-base leading-relaxed max-w-2xl font-sans">
-                Results-driven Data Analyst with 1 year of hands-on experience and 8+ years in reporting, data management, business analytics, and operational support across govt. and pvt. sectors. Proficient in Advanced Excel, SQL, Power BI, and Python for dashboard development, automation, and data analysis. Skilled at transforming raw data into actionable insights to support data-driven business decisions.
+                Results-driven Data Analyst with <span style={{ color: '#D6536D', fontWeight: 500 }}>1 year</span> of hands-on experience and <span style={{ color: '#D6536D', fontWeight: 500 }}>8+ years</span> in reporting, data management, business analytics, and operational support across govt. and pvt. sectors. Proficient in Advanced Excel, SQL, Power BI, and Python for dashboard development, automation, and data analysis. Skilled at transforming raw data into actionable insights to support data-driven business decisions.
               </p>
             </motion.div>
 
